@@ -1,5 +1,5 @@
 # Literature Clock Quote Display
-This Python script is designed to display literary quotes on an InkyWHAT e-ink screen for every minute of the day. The script fetches quotes from JSON files stored for each specific time and dynamically adjusts the text size to fit the display.
+This Python script is designed to display literary quotes on an InkyWHAT e-ink screen (connected to a Raspberry Pi) for every minute of the day. The script fetches quotes from JSON files stored for each specific time and dynamically adjusts the text size to fit the display.
 
 # How does the script work?
 Displaying the Quote: It selects a random quote for each time slot and displays it on the InkyWHAT e-ink display. If no quote is found, a default fallback message is used.
