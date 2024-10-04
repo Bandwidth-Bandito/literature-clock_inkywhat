@@ -1,19 +1,29 @@
-# literature-clock
+# Literature Clock Quote Display
+This Python script is designed to display literary quotes on an InkyWHAT e-ink screen for every minute of the day. The script fetches quotes from JSON files stored for each specific time and dynamically adjusts the text size to fit the display.
+
+# How does the script work?
+Displaying the Quote: It selects a random quote for each time slot and displays it on the InkyWHAT e-ink display. If no quote is found, a default fallback message is used.
+Text Wrapping and Centering: Text is wrapped to fit within the display width, and the entire quote is centered on the screen to ensure optimal readability.
+Service Integration: This script is designed to run as a system service to ensure it continuously updates the display, even after reboots or crashes.
+
+# Requirements
+InkyWHAT Display: The script is specifically designed for the InkyWHAT e-ink screen with a 'red' color variant.
+Python Dependencies: Requires Pillow for image manipulation, Inky for controlling the e-ink display, and standard libraries like datetime, os, and json.
+Usage:
+The script should be run on a Raspberry Pi connected to the InkyWHAT display. It is recommended to set this up as a service that starts at boot to ensure continuous operation.
+
+
+
+
+
+
+
+
+
+# The work is based on:
+
+The work of JohannesNE.
+The work of tafj0.
+
 Clock using time quotes from the literature, based on work and idea by
         [Jaap Meijers](http://www.eerlijkemedia.nl/) ([E-reader clock](https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/)).
-
-Force light or dark theme with the `theme` query parameter. E.g. https://literature-clock.jenevoldsen.com?theme=dark
-
-The working site is in the docs/ folder, and can be visited at http://literature-clock.jenevoldsen.com/. To run it locally you may need to serve docs/ with an HTTP server (e.g. `python3 -m http.server`) ... or just open index.html in Firefox (thanks [@gbear605](https://github.com/gbear605)).
-
-> ℹ️ NB: Some quotes are potentially NSFW. See issue [#11](https://github.com/JohannesNE/literature-clock/issues/11).
-> To filter out (most) NSFW quotes, use the `sfw` query parameter. E.g. https://literature-clock.jenevoldsen.com?sfw=true
-> 
-
-# Convert .csv quotes to .json quotes
-
-Quotes are kept in `litclock_annotated.csv`. These are converted into a `.json` file for each minute with `csv_to_json.R`. To run the R script, install R and use the package manager, {packrat}, to install the correct version of the packages: `packrat::restore()`.
-
-## Other related projects
-
-- **[litime](https://github.com/ikornaselur/litime)** - A command line tool that shows a timely quote when it is executed.

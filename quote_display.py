@@ -39,7 +39,7 @@ class QuoteDisplay:
     def loadData(self):
         """Load quote data from JSON files"""
         self.quote_data = {}
-        base_path = "/home/pi/literature-clock_5_mod/docs/times"
+        base_path = "/home/pi/literature-clock_inkywhat/docs/times"
         for hours in range(24):
             for mins in range(60):
                 time_str = "{:02d}_{:02d}".format(hours, mins)
@@ -109,7 +109,7 @@ class QuoteDisplay:
                 author_text = f"{quote_info['title']} - {quote_info['author']}"
                 author_font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', base_author_font_size)
                 author_text_width, author_text_height = draw.textbbox((0, 0), author_text, font=author_font)[2:4]
-                
+
                 # Positioning the author text at the bottom-left corner
                 draw.text((10, 300 - author_text_height - 10), author_text, fill=QuoteDisplay.inky_display.BLACK, font=author_font)
 
