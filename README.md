@@ -20,7 +20,7 @@ The script should be run on a Raspberry Pi connected to the InkyWHAT display. It
 
 
 
-# The work is based on:
+# The project is based on:
 
 The work of JohannesNE.
 The work of tafj0.
