@@ -8,7 +8,7 @@ import time
 import json
 from datetime import datetime
 from PIL import Image, ImageFont, ImageDraw
-from inky import InkyWHAT
+from from waveshare_epd import epd7in3e
 
 # Logging setup
 logging.basicConfig(level=logging.WARNING)
@@ -25,9 +25,9 @@ max_display_width = 400  # Maximum width for the text
 max_display_height = 280  # Maximum height for the text (excluding author text)
 
 class QuoteDisplay:
-    """Class to manage the quotes and display on InkyWHAT"""
+    """Class to manage the quotes and display on epd7in3e"""
 
-    inky_display = InkyWHAT('red')  # Use 'red' as the color variant
+    inky_display = epd7in3e('red')  # Use 'red' as the color variant
 
     def __init__(self, fixedTime=''):
         self.fixedTime = fixedTime
@@ -39,7 +39,7 @@ class QuoteDisplay:
     def loadData(self):
         """Load quote data from JSON files"""
         self.quote_data = {}
-        base_path = "/home/pi/literature-clock_inkywhat/docs/times"
+        base_path = "/home/pi/literature-clock/docs/times"
         for hours in range(24):
             for mins in range(60):
                 time_str = "{:02d}_{:02d}".format(hours, mins)
